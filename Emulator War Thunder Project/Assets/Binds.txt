@@ -1,0 +1,15 @@
+Gas - W
+Stop - S
+GearUp - Num9
+GearDown - Num6
+GearN - Num3
+ActiveEngien - I
+Driver's mech mode - Num5
+Repair - F
+Shot - Num7
+Optics - LShift
+LookAround - C
+Zoom - Num4
+Measure the distance to the target - Num1
+Smoke - G
+Firefighting - 6
