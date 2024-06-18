@@ -50,6 +50,9 @@
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             DisableInputSimulationLable = new Label();
+            trackBar1 = new TrackBar();
+            label9 = new Label();
+            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             SuspendLayout();
             // 
             // consoleBox
@@ -262,12 +265,31 @@
             DisableInputSimulationLable.TabIndex = 24;
             DisableInputSimulationLable.Text = "Active: True";
             // 
+            // trackBar1
+            // 
+            trackBar1.Location = new Point(6, 350);
+            trackBar1.Maximum = 2;
+            trackBar1.Name = "trackBar1";
+            trackBar1.Size = new Size(155, 45);
+            trackBar1.TabIndex = 25;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(6, 380);
+            label9.Name = "label9";
+            label9.Size = new Size(163, 15);
+            label9.TabIndex = 26;
+            label9.Text = "50mm       105mm       155mm";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(802, 536);
+            Controls.Add(label9);
+            Controls.Add(trackBar1);
             Controls.Add(DisableInputSimulationLable);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
@@ -292,6 +314,7 @@
             Controls.Add(consoleBox);
             Name = "MainForm";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -320,5 +343,7 @@
         private ComboBox comboBox1;
         private ComboBox comboBox2;
         private Label DisableInputSimulationLable;
+        private TrackBar trackBar1;
+        private Label label9;
     }
 }

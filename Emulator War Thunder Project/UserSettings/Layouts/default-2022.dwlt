@@ -274,7 +274,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 123
+  controlID: 77
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -547,7 +547,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6eebffffbaebffff88edffff88f3ffffd4f3ffffc4f5ffff16fbffff286300004063000072750000a8860000c2860000
+      m_ExpandedIDs: 16fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -942,7 +942,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 1294.5559, y: 644.1069, z: -6.889213}
     speed: 2
-    m_Value: {x: 1291.1566, y: 614.6466, z: -6.23041}
+    m_Value: {x: 1294.5559, y: 644.1069, z: -6.889213}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 1529.9012
     speed: 2
-    m_Value: 1464.0204
+    m_Value: 1529.9012
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1114,9 +1114,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e2660000
-    m_LastClickedID: 26338
-    m_ExpandedIDs: 00000000ba660000bc660000be660000c0660000c2660000c4660000c6660000c866000000ca9a3b
+    m_SelectedIDs: 94660000
+    m_LastClickedID: 26260
+    m_ExpandedIDs: 000000006c6600006e66000070660000726600007466000076660000786600007a66000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1144,7 +1144,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ba660000bc660000be660000c0660000c2660000c4660000c6660000c8660000
+    m_ExpandedIDs: 000000006c6600006e66000070660000726600007466000076660000786600007a660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000706200005a6300003866000058720200b4660000d26400002e5f01004c630000e26600005c6900007a6200006a6600007066000004680000306a0000ce3102006c67000020f30200d0690000ba8e000040720000467900000c42020020770000989e0100466e0000706f00003cb5020030730000e4770000bc8f0000aa12060010780000c8d00000eae500004479000020710000207a0000928d0000788c0000a47400001e780000e09c0000b2ac000054b100005c940000d0930000fcb6000078840000227d0000d4b5000030d3000040cb00008480000064e50000166201005c7b0000fea20000e4c9000036c500002c7a000076d90b0072d90b003ca0000070c6000046c50000aea8000018ce01007a7f00006ef6000082240800b487010000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
