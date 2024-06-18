@@ -63,10 +63,12 @@
     <Compile Include="Assets\Skripts\Elements\DriverElement\SmoothTurnSwitch.cs" />
     <Compile Include="Assets\Skripts\DataMessage\PackageValueVector2.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
+    <Compile Include="Assets\Skripts\Elements\LoaderElement\ProjectileRndColor.cs" />
     <Compile Include="Assets\Skripts\Elements\DriverElement\GasPedalActivity.cs" />
     <Compile Include="Assets\Skripts\Elements\DriverElement\ClutchPedalActivity.cs" />
     <Compile Include="Assets\Skripts\Elements\DriverElement\GearShift.cs" />
     <Compile Include="Assets\Skripts\Elements\GunnerElement\GunMoveSendDataController.cs" />
+    <Compile Include="Assets\Skripts\DataMessage\PackageProjectile.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Skripts\CrewSystem\DriverSystem.cs" />
     <Compile Include="Assets\Skripts\CrewSystem\CommanderSystem.cs" />
@@ -74,13 +76,16 @@
     <Compile Include="Assets\Skripts\DataMessage\PackageValueFloat.cs" />
     <Compile Include="Assets\Skripts\Core\MyConsole.cs" />
     <Compile Include="Assets\Skripts\DataMessage\CustomSerializationBinder.cs" />
+    <Compile Include="Assets\Skripts\Elements\LoaderElement\ProjectileItemController.cs" />
     <Compile Include="Assets\Skripts\DataMessage\Package.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Skripts\DataMessage\JsonDataSerializer.cs" />
     <Compile Include="Assets\Skripts\DataMessage\PackageFactory.cs" />
     <Compile Include="Assets\Skripts\Elements\GunnerElement\GuidanceActuatorAssembler.cs" />
     <Compile Include="Assets\Skripts\Core\Vibration.cs" />
+    <Compile Include="Assets\Skripts\Elements\LoaderElement\GunAnim.cs" />
     <Compile Include="Assets\Skripts\InputPacketHandler.cs" />
+    <Compile Include="Assets\Skripts\CrewSystem\LoaderSystem.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Skripts\Elements\DriverElement\TumblerViewButton.cs" />
@@ -90,10 +95,12 @@
     <Compile Include="Assets\Skripts\Client.cs" />
     <Compile Include="Assets\Skripts\Elements\DriverElement\RotationObserver.cs" />
     <Compile Include="Assets\Skripts\Elements\Commander_Element\JoyMoveSendDataController.cs" />
+    <Compile Include="Assets\Skripts\ScriptableObjects\ProjectileInfo.cs" />
     <Compile Include="Assets\Skripts\DataMessage\PackageValueBool.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Skripts\CrewSystem\GunnerSystem.cs" />
     <Compile Include="Assets\Skripts\DataMessage\PackageValueInt.cs" />
+    <Compile Include="Assets\Skripts\Elements\LoaderElement\GunController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -142,7 +142,7 @@ public class Client : MonoBehaviour
         {
             Package package = JsonDataSerializer.DeserializeJson<Package>(message);
             inputPacketHandler.ProcessPackage(package);
-            MyConsole.Instance.DebugLog($"Received package: {package.NamePackage}");
+            MyConsole.Instance.DebugLog($"{package.NamePackage}");
         }
         else
         {

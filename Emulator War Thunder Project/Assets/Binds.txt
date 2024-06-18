@@ -13,3 +13,5 @@ Zoom - Num4
 Measure the distance to the target - Num1
 Smoke - G
 Firefighting - 6
+Select projectile 1 - 1
+Select projectile 2 - 2

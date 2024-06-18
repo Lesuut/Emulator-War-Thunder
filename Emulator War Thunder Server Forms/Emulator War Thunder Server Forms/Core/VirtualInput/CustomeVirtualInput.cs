@@ -36,6 +36,8 @@ public class CustomeVirtualInput
 
     private bool isOpticActive = false;
 
+    private bool loadGun = true;
+
     public async Task<bool> TryAction(Package package, GameSettingsData gameSettingsData)
     {
         this.gameSettingsData = gameSettingsData;
@@ -49,6 +51,9 @@ public class CustomeVirtualInput
                     break;
                 case "Turn":
                     Turn(packageValueInt.ValueInt);
+                    break;
+                case "Select Projectile":
+                    await SelectProjectileActive(packageValueInt.ValueInt);
                     break;
                 default:
                     break;
@@ -125,13 +130,24 @@ public class CustomeVirtualInput
                 case "Firefighting":
                     await FirefightingActive();
                     break;
+                case "Finish Reload":
+                    FinishLoadGun();
+                    break;
                 default:
                     break;
             }
         }
         return true;
     }
-
+    public void ResetGun()
+    {
+        loadGun = true;
+    }
+    private void FinishLoadGun()
+    {
+        console($"Gun is reloaded");
+        loadGun = true;
+    }
     private void Gas(bool value)
     {
         if (value)
@@ -192,10 +208,20 @@ public class CustomeVirtualInput
     }
     private async Task ShotActive()
     {
-        console($"{currentLablePackage} Shot Active");
-        VirtualJeyBoard.HoldKey(KEYCODE.VK_NUMPAD7);
-        await Task.Delay(25);
-        VirtualJeyBoard.UpKey(KEYCODE.VK_NUMPAD7);
+        if (loadGun)
+        {
+            console($"{currentLablePackage} Shot Active");
+            loadGun = false;
+            gameSettingsData.mainGunShot.Invoke();
+            VirtualJeyBoard.HoldKey(KEYCODE.VK_NUMPAD7);
+            await Task.Delay(25);
+            VirtualJeyBoard.UpKey(KEYCODE.VK_NUMPAD7);
+            gameSettingsData.broadcastMessage(gameSettingsData.packageFactory.GetPackage("Shot Main Gun"));
+        }
+        else
+        {
+            console($"{currentLablePackage} Gun not load");
+        }
     }
     private async Task ZoomActive()
     {
@@ -224,6 +250,59 @@ public class CustomeVirtualInput
         VirtualJeyBoard.HoldKey(KEYCODE.VK_6);
         await Task.Delay(25);
         VirtualJeyBoard.UpKey(KEYCODE.VK_6);
+    }
+    private async Task SelectProjectileActive(int idButton)
+    {
+        console($"{currentLablePackage} Select Projectile {idButton} Active");
+        switch (idButton)
+        {
+            case 0:
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_1);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_1);
+                await Task.Delay(100);
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_1);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_1);
+                break;
+            case 1:
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_2);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_2);
+                await Task.Delay(100);
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_2);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_2);
+                break;
+            case 2:
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_3);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_3);
+                await Task.Delay(100);
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_3);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_3);
+                break;
+            case 3:
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_4);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_4);
+                await Task.Delay(100);
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_4);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_4);
+                break;
+            default:
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_1);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_1);
+                await Task.Delay(100);
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_1);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_1);
+                break;
+        }
+        console($"{currentLablePackage} Select Projectile {idButton} Finish");
     }
 
     private async Task RunGearChanger(int newGear)

@@ -43,16 +43,17 @@
             label4 = new Label();
             label5 = new Label();
             checkBox1 = new CheckBox();
-            RestartReloadingButton = new Button();
+            ResetReloadingButton = new Button();
             label7 = new Label();
             label8 = new Label();
             label6 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            comboBoxProjectile1 = new ComboBox();
+            comboBoxProjectile2 = new ComboBox();
             DisableInputSimulationLable = new Label();
-            trackBar1 = new TrackBar();
+            GunCaliber = new TrackBar();
             label9 = new Label();
-            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
+            SetProjectileButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)GunCaliber).BeginInit();
             SuspendLayout();
             // 
             // consoleBox
@@ -199,15 +200,16 @@
             checkBox1.Text = "Use Recharge";
             checkBox1.UseVisualStyleBackColor = true;
             // 
-            // RestartReloadingButton
+            // ResetReloadingButton
             // 
-            RestartReloadingButton.AllowDrop = true;
-            RestartReloadingButton.Location = new Point(4, 314);
-            RestartReloadingButton.Name = "RestartReloadingButton";
-            RestartReloadingButton.Size = new Size(157, 23);
-            RestartReloadingButton.TabIndex = 18;
-            RestartReloadingButton.Text = "Restart Reloading";
-            RestartReloadingButton.UseVisualStyleBackColor = true;
+            ResetReloadingButton.AllowDrop = true;
+            ResetReloadingButton.Location = new Point(4, 343);
+            ResetReloadingButton.Name = "ResetReloadingButton";
+            ResetReloadingButton.Size = new Size(157, 23);
+            ResetReloadingButton.TabIndex = 18;
+            ResetReloadingButton.Text = "Reset Reloading";
+            ResetReloadingButton.UseVisualStyleBackColor = true;
+            ResetReloadingButton.Click += ResetReloadingButton_Click;
             // 
             // label7
             // 
@@ -236,25 +238,25 @@
             label6.TabIndex = 21;
             label6.Text = "Ammunition 2 Count";
             // 
-            // comboBox1
+            // comboBoxProjectile1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Absent", "", "Armor-piercing ББ", "", "High explosive ОФ" });
-            comboBox1.Location = new Point(4, 205);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(139, 23);
-            comboBox1.TabIndex = 22;
-            comboBox1.Text = "Armor-piercing ББ";
+            comboBoxProjectile1.FormattingEnabled = true;
+            comboBoxProjectile1.Items.AddRange(new object[] { "Absent", "Armor-piercing ББ", "High explosive ОФ" });
+            comboBoxProjectile1.Location = new Point(4, 205);
+            comboBoxProjectile1.Name = "comboBoxProjectile1";
+            comboBoxProjectile1.Size = new Size(139, 23);
+            comboBoxProjectile1.TabIndex = 22;
+            comboBoxProjectile1.Text = "Armor-piercing ББ";
             // 
-            // comboBox2
+            // comboBoxProjectile2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Absent", "", "Armor-piercing ББ", "", "High explosive ОФ" });
-            comboBox2.Location = new Point(4, 259);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(139, 23);
-            comboBox2.TabIndex = 23;
-            comboBox2.Text = "Absent";
+            comboBoxProjectile2.FormattingEnabled = true;
+            comboBoxProjectile2.Items.AddRange(new object[] { "Absent", "Armor-piercing ББ", "High explosive ОФ" });
+            comboBoxProjectile2.Location = new Point(4, 259);
+            comboBoxProjectile2.Name = "comboBoxProjectile2";
+            comboBoxProjectile2.Size = new Size(139, 23);
+            comboBoxProjectile2.TabIndex = 23;
+            comboBoxProjectile2.Text = "Absent";
             // 
             // DisableInputSimulationLable
             // 
@@ -265,22 +267,34 @@
             DisableInputSimulationLable.TabIndex = 24;
             DisableInputSimulationLable.Text = "Active: True";
             // 
-            // trackBar1
+            // GunCaliber
             // 
-            trackBar1.Location = new Point(6, 350);
-            trackBar1.Maximum = 2;
-            trackBar1.Name = "trackBar1";
-            trackBar1.Size = new Size(155, 45);
-            trackBar1.TabIndex = 25;
+            GunCaliber.Location = new Point(6, 381);
+            GunCaliber.Maximum = 2;
+            GunCaliber.Name = "GunCaliber";
+            GunCaliber.Size = new Size(155, 45);
+            GunCaliber.TabIndex = 25;
+            GunCaliber.Scroll += GunCaliber_Scroll;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(6, 380);
+            label9.Location = new Point(6, 411);
             label9.Name = "label9";
             label9.Size = new Size(163, 15);
             label9.TabIndex = 26;
             label9.Text = "50mm       105mm       155mm";
+            // 
+            // SetProjectileButton
+            // 
+            SetProjectileButton.AllowDrop = true;
+            SetProjectileButton.Location = new Point(4, 314);
+            SetProjectileButton.Name = "SetProjectileButton";
+            SetProjectileButton.Size = new Size(157, 23);
+            SetProjectileButton.TabIndex = 27;
+            SetProjectileButton.Text = "Set Projectile";
+            SetProjectileButton.UseVisualStyleBackColor = true;
+            SetProjectileButton.Click += SetProjectileButton_Click;
             // 
             // MainForm
             // 
@@ -288,15 +302,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(802, 536);
+            Controls.Add(SetProjectileButton);
             Controls.Add(label9);
-            Controls.Add(trackBar1);
+            Controls.Add(GunCaliber);
             Controls.Add(DisableInputSimulationLable);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxProjectile2);
+            Controls.Add(comboBoxProjectile1);
             Controls.Add(label6);
             Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(RestartReloadingButton);
+            Controls.Add(ResetReloadingButton);
             Controls.Add(checkBox1);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -314,7 +329,7 @@
             Controls.Add(consoleBox);
             Name = "MainForm";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)GunCaliber).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -336,14 +351,15 @@
         private Label label4;
         private Label label5;
         private CheckBox checkBox1;
-        private Button RestartReloadingButton;
+        private Button ResetReloadingButton;
         private Label label7;
         private Label label8;
         private Label label6;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxProjectile1;
+        private ComboBox comboBoxProjectile2;
         private Label DisableInputSimulationLable;
-        private TrackBar trackBar1;
+        private TrackBar GunCaliber;
         private Label label9;
+        private Button SetProjectileButton;
     }
 }

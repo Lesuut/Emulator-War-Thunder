@@ -32,4 +32,8 @@
     {
         return new PackageValueString(localName, namePackage, typeCrew);
     }
+    public PackageProjectile GetPackageProjectile(string namePackage)
+    {
+        return new PackageProjectile(localName, namePackage, typeCrew);
+    }
 }

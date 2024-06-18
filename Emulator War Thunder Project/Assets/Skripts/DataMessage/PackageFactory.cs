@@ -31,4 +31,8 @@
     {
         return new PackageValueString(selectNameSystem.GetName(), namePackage, typeCrew);
     }
+    public PackageProjectile GetPackageProjectile(string namePackage)
+    {
+        return new PackageProjectile(selectNameSystem.GetName(), namePackage, typeCrew);
+    }
 }

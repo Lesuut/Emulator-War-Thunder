@@ -22,7 +22,8 @@ public static class JsonDataSerializer
             typeof(PackageValueInt),
             typeof(PackageValueBool),
             typeof(PackageValueVector2),
-            typeof(PackageValueString)
+            typeof(PackageValueString),
+            typeof(PackageProjectile),
         };
         var binder = new CustomSerializationBinder(knownTypes);
 

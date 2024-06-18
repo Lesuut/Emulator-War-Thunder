@@ -86,7 +86,13 @@ namespace Emulator_War_Thunder_Server_Forms
                     {
                         if (inputAccept)
                         {
-                            _ = virtualImput.TryAction(JsonDataSerializer.DeserializeJson<Package>(message), new GameSettingsData(GearsQuantityForwardInput, GearsQuantityBackInput, CurrentGearText));
+                            _ = virtualImput.TryAction(JsonDataSerializer.DeserializeJson<Package>(message), new GameSettingsData(
+                                GearsQuantityForwardInput,
+                                GearsQuantityBackInput,
+                                CurrentGearText,
+                                BroadcastMessage,
+                                packageFactory,
+                                MainGunShotAction));
                             jsonDebugText.ForeColor = defJsonDebugTextForeColor;
                             jsonDebugText.Text = message;
                         }
@@ -278,6 +284,107 @@ namespace Emulator_War_Thunder_Server_Forms
         private void GearsQuantityForwardInput_TextChanged(object sender, EventArgs e)
         {
             BroadcastMessage(GetSuitableGearBox());
+        }
+        private async void SetProjectileButton_Click(object sender, EventArgs e)
+        {
+            await SetProjectiles();
+        }
+        private async Task SetProjectiles()
+        {
+            SetReloadTime();
+            await Task.Delay(500);
+            if (comboBoxProjectile1.SelectedIndex != 0)
+            {
+                PackageProjectile packageProjectile = packageFactory.GetPackageProjectile("Set Projectile");
+                packageProjectile.IdButton = 1;
+                packageProjectile.ProjectileId = comboBoxProjectile1.SelectedIndex;
+                int count;
+                if (Amunition1Count != null && int.TryParse(Amunition1Count.Text, out int parseValue))
+                {
+                    count = parseValue;
+                }
+                else
+                {
+                    count = 1;
+                }
+                packageProjectile.ProjectileCount = count;
+                ConsoleLog($"Set Projectile IdButton:{packageProjectile.IdButton} ProjectileId: {packageProjectile.ProjectileId} ProjectileCount: {packageProjectile.ProjectileCount}");
+                BroadcastMessage(packageProjectile);
+            }
+            await Task.Delay(500);
+            if (comboBoxProjectile2.SelectedIndex != 0)
+            {
+                PackageProjectile packageProjectile = packageFactory.GetPackageProjectile("Set Projectile");
+                packageProjectile.IdButton = 2;
+                packageProjectile.ProjectileId = comboBoxProjectile2.SelectedIndex;
+                int count;
+                if (Amunition2Count != null && int.TryParse(Amunition2Count.Text, out int parseValue))
+                {
+                    count = parseValue;
+                }
+                else
+                {
+                    count = 1;
+                }
+                packageProjectile.ProjectileCount = count;
+                ConsoleLog($"Set Projectile IdButton:{packageProjectile.IdButton} ProjectileId: {packageProjectile.ProjectileId} ProjectileCount: {packageProjectile.ProjectileCount}");
+                BroadcastMessage(packageProjectile);
+            }
+        }
+
+        private void SetReloadTime()
+        {
+            PackageValueFloat package = packageFactory.GetPackageValueFlaot("Set Reload Time");
+            float time;
+            if (ReloadTimeTextBox != null && float.TryParse(ReloadTimeTextBox.Text, out float parseValue))
+            {
+                time = parseValue;
+            }
+            else
+            {
+                time = 10;
+            }
+            package.ValueFloat = time;
+            BroadcastMessage(package);
+            ConsoleLog($"SetReloadTime: {package.ValueFloat}s");
+        }
+
+        private void ResetReloadingButton_Click(object sender, EventArgs e)
+        {
+            Package package = packageFactory.GetPackage("Reset Reloading");
+            BroadcastMessage(package);
+            virtualImput.ResetGun();
+            ConsoleLog("Reset Gun");
+        }
+        private void MainGunShotAction()
+        {
+            Package package = packageFactory.GetPackage("Shot Main Gun");
+            BroadcastMessage(package);
+        }
+        private void SetGunCaliber()
+        {
+            PackageValueInt package = packageFactory.GetPackageValueInt("Set Gun Caliber");
+            package.ValueInt = GunCaliber.Value;
+            BroadcastMessage(package);
+            switch (GunCaliber.Value)
+            {
+                case 0:
+                    ConsoleLog("Set Gun Caliber 50mm");
+                    break;
+                case 1:
+                    ConsoleLog("Set Gun Caliber 105mm");
+                    break;
+                case 2:
+                    ConsoleLog("Set Gun Caliber 155mm");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void GunCaliber_Scroll(object sender, EventArgs e)
+        {
+            SetGunCaliber();
         }
     }
 }
