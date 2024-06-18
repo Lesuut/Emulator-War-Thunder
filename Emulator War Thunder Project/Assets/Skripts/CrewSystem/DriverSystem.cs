@@ -4,6 +4,8 @@ public class DriverSystem : MonoBehaviour
 {
     [SerializeField] private Client client;
     [SerializeField] private SelectNameSystem selectNameSystem;
+    [Space]
+    [SerializeField] private GearBoxObj[] gearBoxObjs;
 
     private PackageFactory pachageFactory;
 
@@ -64,4 +66,28 @@ public class DriverSystem : MonoBehaviour
             client.PostData(package);
         }
     }
+    public void SetGear(int gear)
+    {
+        foreach (var item in gearBoxObjs)
+        {
+            if (item.objGearlBox.activeSelf)
+            {
+                item.objGearlBox.SetActive(false);
+            }
+        }
+        foreach (var item in gearBoxObjs)
+        {
+            if (gear == item.maxGears)
+            {
+                item.objGearlBox.SetActive(true);
+                return;
+            }
+        }
+    }
+}
+[System.Serializable]
+public class GearBoxObj
+{
+    public GameObject objGearlBox;
+    public int maxGears;
 }

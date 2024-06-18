@@ -179,6 +179,7 @@ namespace Emulator_War_Thunder_Server_Forms
                 {
                     inputAccept = !inputAccept;
                     ConsoleLog($"Keyboard control: {inputAccept}");
+                    DisableInputSimulationLable.Text = $"Active: {inputAccept}";
                 }
                 Task.Delay(100).Wait(); // небольшая задержка для снижения нагрузки на процессор
             }

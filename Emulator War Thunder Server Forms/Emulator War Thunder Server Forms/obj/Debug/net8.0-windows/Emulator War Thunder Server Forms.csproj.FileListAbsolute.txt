@@ -39,3 +39,4 @@ D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulato
 D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.pdb
 D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.genruntimeconfig.cache
 D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\ref\Emulator War Thunder Server Forms.dll
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator_War_Thunder_Server_Forms.Properties.Resources.resources

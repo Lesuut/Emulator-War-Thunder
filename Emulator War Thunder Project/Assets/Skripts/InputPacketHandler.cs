@@ -2,15 +2,16 @@
 
 public class InputPacketHandler : MonoBehaviour
 {
+    [SerializeField] private DriverSystem driverSystem;
+
     public void ProcessPackage(Package package)
     {
-        if (package is PackageValueInt)
+        if (package is PackageValueInt packageValueInt)
         {
-            package = (PackageValueInt)package;
             switch (package.NamePackage)
             {
-                case "":
-
+                case "Suitable Gear Box":
+                    driverSystem.SetGear(packageValueInt.ValueInt);
                     break;
                 default:
                     break;
