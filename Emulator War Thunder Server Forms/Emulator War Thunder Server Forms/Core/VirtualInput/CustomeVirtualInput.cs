@@ -256,47 +256,27 @@ public class CustomeVirtualInput
         console($"{currentLablePackage} Select Projectile {idButton} Active");
         switch (idButton)
         {
-            case 0:
-                VirtualJeyBoard.HoldKey(KEYCODE.VK_1);
-                await Task.Delay(25);
-                VirtualJeyBoard.UpKey(KEYCODE.VK_1);
-                await Task.Delay(100);
-                VirtualJeyBoard.HoldKey(KEYCODE.VK_1);
-                await Task.Delay(25);
-                VirtualJeyBoard.UpKey(KEYCODE.VK_1);
-                break;
             case 1:
-                VirtualJeyBoard.HoldKey(KEYCODE.VK_2);
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_1);
                 await Task.Delay(25);
-                VirtualJeyBoard.UpKey(KEYCODE.VK_2);
-                await Task.Delay(100);
-                VirtualJeyBoard.HoldKey(KEYCODE.VK_2);
-                await Task.Delay(25);
-                VirtualJeyBoard.UpKey(KEYCODE.VK_2);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_1);
                 break;
             case 2:
-                VirtualJeyBoard.HoldKey(KEYCODE.VK_3);
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_2);
                 await Task.Delay(25);
-                VirtualJeyBoard.UpKey(KEYCODE.VK_3);
-                await Task.Delay(100);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_2);
+                break;
+            case 3:
                 VirtualJeyBoard.HoldKey(KEYCODE.VK_3);
                 await Task.Delay(25);
                 VirtualJeyBoard.UpKey(KEYCODE.VK_3);
                 break;
-            case 3:
-                VirtualJeyBoard.HoldKey(KEYCODE.VK_4);
-                await Task.Delay(25);
-                VirtualJeyBoard.UpKey(KEYCODE.VK_4);
-                await Task.Delay(100);
+            case 4:
                 VirtualJeyBoard.HoldKey(KEYCODE.VK_4);
                 await Task.Delay(25);
                 VirtualJeyBoard.UpKey(KEYCODE.VK_4);
                 break;
             default:
-                VirtualJeyBoard.HoldKey(KEYCODE.VK_1);
-                await Task.Delay(25);
-                VirtualJeyBoard.UpKey(KEYCODE.VK_1);
-                await Task.Delay(100);
                 VirtualJeyBoard.HoldKey(KEYCODE.VK_1);
                 await Task.Delay(25);
                 VirtualJeyBoard.UpKey(KEYCODE.VK_1);
