@@ -18,3 +18,24 @@ D:\Unity\Projects\Emulator War Thunder\Emulator War Thunder Server Forms\Emulato
 D:\Unity\Projects\Emulator War Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.csproj.AssemblyReference.cache
 D:\Unity\Projects\Emulator War Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator.86232853.Up2Date
 D:\Unity\Projects\Emulator War Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\bin\Debug\net8.0-windows\WindowsInput.dll
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\bin\Debug\net8.0-windows\Emulator War Thunder Server Forms.exe
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\bin\Debug\net8.0-windows\Emulator War Thunder Server Forms.deps.json
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\bin\Debug\net8.0-windows\Emulator War Thunder Server Forms.runtimeconfig.json
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\bin\Debug\net8.0-windows\Emulator War Thunder Server Forms.dll
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\bin\Debug\net8.0-windows\Emulator War Thunder Server Forms.pdb
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\bin\Debug\net8.0-windows\WindowsInput.dll
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.csproj.AssemblyReference.cache
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator_War_Thunder_Server_Forms.MainForm.resources
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.csproj.GenerateResource.cache
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.AssemblyInfoInputs.cache
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.AssemblyInfo.cs
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.csproj.CoreCompileInputs.cache
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.sourcelink.json
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator.86232853.Up2Date
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.dll
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\refint\Emulator War Thunder Server Forms.dll
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.pdb
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\Emulator War Thunder Server Forms.genruntimeconfig.cache
+D:\Unity\Projects\Emulator-War-Thunder\Emulator War Thunder Server Forms\Emulator War Thunder Server Forms\obj\Debug\net8.0-windows\ref\Emulator War Thunder Server Forms.dll

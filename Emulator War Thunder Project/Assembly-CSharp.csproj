@@ -80,6 +80,7 @@
     <Compile Include="Assets\Skripts\DataMessage\PackageFactory.cs" />
     <Compile Include="Assets\Skripts\Elements\GunnerElement\GuidanceActuatorAssembler.cs" />
     <Compile Include="Assets\Skripts\Core\Vibration.cs" />
+    <Compile Include="Assets\Skripts\InputPacketHandler.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Skripts\Elements\DriverElement\TumblerViewButton.cs" />

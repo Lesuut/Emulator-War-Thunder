@@ -10,6 +10,7 @@ public class Client : MonoBehaviour
 {
     [SerializeField] private InputField inputFieldIP;
     [SerializeField] protected SelectNameSystem selectNameSystem;
+    [SerializeField] private InputPacketHandler inputPacketHandler;
 
     private TcpClient client;
     private NetworkStream stream;
@@ -34,7 +35,7 @@ public class Client : MonoBehaviour
         }
         catch (Exception ex)
         {
-            Debug.LogException(ex);
+            Debug.LogError(ex);
         }
     }
 
@@ -49,7 +50,7 @@ public class Client : MonoBehaviour
             }
             catch (Exception ex)
             {
-                Debug.LogException(ex);
+                Debug.LogError(ex);
             }
             finally
             {
@@ -84,23 +85,23 @@ public class Client : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning("Stream is not writable.");
+                    Debug.LogError("Stream is not writable.");
                     Disconnect();
                 }
             }
             catch (IOException ioEx)
             {
-                Debug.LogException(ioEx);
+                Debug.LogError(ioEx);
                 Disconnect();
             }
             catch (SocketException sockEx)
             {
-                Debug.LogException(sockEx);
+                Debug.LogError(sockEx);
                 Disconnect();
             }
             catch (Exception ex)
             {
-                Debug.LogException(ex);
+                Debug.LogError(ex);
                 Disconnect();
             }
         }
@@ -110,7 +111,7 @@ public class Client : MonoBehaviour
     {
         try
         {
-            byte[] bytes = new byte[256];
+            byte[] bytes = new byte[512];
             while (connected)
             {
                 int bytesRead = stream.Read(bytes, 0, bytes.Length);
@@ -123,15 +124,15 @@ public class Client : MonoBehaviour
         }
         catch (IOException ioEx)
         {
-            Debug.LogException(ioEx);
+            Debug.LogError(ioEx);
         }
         catch (SocketException sockEx)
         {
-            Debug.LogException(sockEx);
+            Debug.LogError(sockEx);
         }
         catch (Exception ex)
         {
-            Debug.LogException(ex);
+            Debug.LogError(ex);
         }
     }
 
@@ -140,8 +141,8 @@ public class Client : MonoBehaviour
         if (IsJson(message))
         {
             Package package = JsonDataSerializer.DeserializeJson<Package>(message);
-            // Обработка пакета
-            Debug.Log($"Received package: {package.NamePackage}");
+            inputPacketHandler.ProcessPackage(package);
+            MyConsole.Instance.DebugLog($"Received package: {package.NamePackage}");
         }
         else
         {

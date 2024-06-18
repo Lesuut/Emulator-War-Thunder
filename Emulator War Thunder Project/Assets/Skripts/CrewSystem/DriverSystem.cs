@@ -33,13 +33,13 @@ public class DriverSystem : MonoBehaviour
     public void Gear(int value)
     {
         PackageValueInt package = pachageFactory.GetPackageValueInt("Gear");
-        package.Value = value;
+        package.ValueInt = value;
         client.PostData(package);
     } 
     public void Turn(int value)
     {
         PackageValueInt package = pachageFactory.GetPackageValueInt("Turn");
-        package.Value = value;
+        package.ValueInt = value;
         client.PostData(package);
     }
     public void EngineActive()

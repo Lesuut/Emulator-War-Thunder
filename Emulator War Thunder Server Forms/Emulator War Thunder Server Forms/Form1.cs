@@ -72,7 +72,7 @@ namespace Emulator_War_Thunder_Server_Forms
             try
             {
                 NetworkStream stream = clientSocket.GetStream();
-                byte[] bytes = new byte[256];
+                byte[] bytes = new byte[512];
 
                 while (isServerRunning)
                 {
@@ -191,6 +191,8 @@ namespace Emulator_War_Thunder_Server_Forms
 
         private void BroadcastMessage(string message, TcpClient tcpClient)
         {
+            jsonDebugText.Text = message;
+
             byte[] messageBytes = Encoding.ASCII.GetBytes(message);
 
             try
@@ -252,29 +254,29 @@ namespace Emulator_War_Thunder_Server_Forms
 
             if (currentGear <= 4)
             {
-                package.value = 4;
+                package.ValueInt = 4;
                 return package;
             }
             else if (currentGear > 4 && currentGear <= 6)
             {
-                package.value = 6;
+                package.ValueInt = 6;
                 return package;
             }
             else if (currentGear > 6 && currentGear <= 8)
             {
-                package.value = 8;
+                package.ValueInt = 8;
                 return package;
             }
             else
             {
-                package.value = 10;
+                package.ValueInt = 10;
                 return package;
             }
         }
 
         private void GearsQuantityForwardInput_TextChanged(object sender, EventArgs e)
         {
-            //BroadcastMessage(GetSuitableGearBox());
+            BroadcastMessage(GetSuitableGearBox());
         }
     }
 }

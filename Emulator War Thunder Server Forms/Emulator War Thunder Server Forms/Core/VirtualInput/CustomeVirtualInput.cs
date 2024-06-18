@@ -45,10 +45,10 @@ public class CustomeVirtualInput
             switch (package.NamePackage)
             {
                 case "Gear":
-                    await RunGearChanger(packageValueInt.Value);
+                    await RunGearChanger(packageValueInt.ValueInt);
                     break;
                 case "Turn":
-                    Turn(packageValueInt.Value);
+                    Turn(packageValueInt.ValueInt);
                     break;
                 default:
                     break;

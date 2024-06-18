@@ -3,5 +3,5 @@
     public PackageValueInt(string nameClient, string namePackage, TypeCrew typeCrew) : base(nameClient, namePackage, typeCrew)
     {
     }
-    public int Value;
+    public int ValueInt;
 }

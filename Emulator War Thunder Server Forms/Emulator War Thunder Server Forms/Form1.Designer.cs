@@ -102,7 +102,7 @@
             jsonDebugText.Location = new Point(175, 430);
             jsonDebugText.Multiline = true;
             jsonDebugText.Name = "jsonDebugText";
-            jsonDebugText.Size = new Size(613, 101);
+            jsonDebugText.Size = new Size(613, 164);
             jsonDebugText.TabIndex = 6;
             jsonDebugText.Text = "JSON";
             // 
@@ -121,7 +121,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(802, 541);
+            ClientSize = new Size(802, 606);
             Controls.Add(sayHiButton);
             Controls.Add(jsonDebugText);
             Controls.Add(CurrentGearText);

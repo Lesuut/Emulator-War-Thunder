@@ -5294,6 +5294,10 @@ MonoBehaviour:
     gearType: 9
   - position: {fileID: 1075763029}
     gearType: 10
+  - position: {fileID: 86694921}
+    gearType: 11
+  - position: {fileID: 818854507}
+    gearType: 12
   driverSystem: {fileID: 1591225405}
   gasPedalActivity: {fileID: 551404032}
   clutchPedalActivity: {fileID: 179547983}
@@ -8435,7 +8439,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 400, y: 146.4369}
+  m_SizeDelta: {x: 537.7755, y: 854}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1428692053
 MonoBehaviour:
@@ -8459,10 +8463,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 6
     m_AlignByGeometry: 0
@@ -10863,6 +10867,7 @@ GameObject:
   - component: {fileID: 1803285333}
   - component: {fileID: 1803285334}
   - component: {fileID: 1803285335}
+  - component: {fileID: 1803285336}
   m_Layer: 0
   m_Name: System
   m_TagString: Untagged
@@ -10899,6 +10904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputFieldIP: {fileID: 674202338}
   selectNameSystem: {fileID: 1803285334}
+  inputPacketHandler: {fileID: 1803285336}
 --- !u!114 &1803285334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10925,6 +10931,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textConsole: {fileID: 1428692053}
+--- !u!114 &1803285336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803285331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13baa09d4d9606349a7d59a84b8575b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1815023780
 GameObject:
   m_ObjectHideFlags: 0
