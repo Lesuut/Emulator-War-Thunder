@@ -302,7 +302,7 @@ namespace Emulator_War_Thunder_Server_Forms
                 int count;
                 if (Amunition1Count != null && int.TryParse(Amunition1Count.Text, out int parseValue))
                 {
-                    count = parseValue;
+                    count = parseValue - 1;
                 }
                 else
                 {
