@@ -208,7 +208,24 @@ public class CustomeVirtualInput
     }
     private async Task ShotActive()
     {
-        if (loadGun)
+        if (gameSettingsData.checkBoxReloadGun.Checked)
+        {
+            if (loadGun)
+            {
+                console($"{currentLablePackage} Shot Active");
+                gameSettingsData.mainGunShot.Invoke();
+                loadGun = false;
+                VirtualJeyBoard.HoldKey(KEYCODE.VK_NUMPAD7);
+                await Task.Delay(25);
+                VirtualJeyBoard.UpKey(KEYCODE.VK_NUMPAD7);
+                gameSettingsData.broadcastMessage(gameSettingsData.packageFactory.GetPackage("Shot Main Gun"));
+            }
+            else
+            {
+                console($"{currentLablePackage} Gun not load");
+            }
+        }
+        else
         {
             console($"{currentLablePackage} Shot Active");
             gameSettingsData.mainGunShot.Invoke();
@@ -217,10 +234,6 @@ public class CustomeVirtualInput
             await Task.Delay(25);
             VirtualJeyBoard.UpKey(KEYCODE.VK_NUMPAD7);
             gameSettingsData.broadcastMessage(gameSettingsData.packageFactory.GetPackage("Shot Main Gun"));
-        }
-        else
-        {
-            console($"{currentLablePackage} Gun not load");
         }
     }
     private async Task ZoomActive()

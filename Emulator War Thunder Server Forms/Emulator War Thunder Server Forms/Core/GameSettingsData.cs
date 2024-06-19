@@ -6,7 +6,8 @@
         Label lableCurrentGear, 
         Action<Package> broadcastMessage, 
         PackageFactory packageFactory, 
-        Action mainGunShot)
+        Action mainGunShot,
+        CheckBox checkBoxReloadGun)
     {
         if (textBoxMaxGear != null && int.TryParse(textBoxMaxGear.Text, out int maxGearValue))
         {
@@ -30,6 +31,7 @@
         this.broadcastMessage = broadcastMessage;
         this.packageFactory = packageFactory;
         this.mainGunShot = mainGunShot;
+        this.checkBoxReloadGun = checkBoxReloadGun;
     }
 
     public int maxGear { get; set; }
@@ -39,4 +41,5 @@
     public Action<Package> broadcastMessage { get; set; }
     public PackageFactory packageFactory { get; set; }
     public Action mainGunShot { get; set; }
+    public CheckBox checkBoxReloadGun { get; set; }
 }

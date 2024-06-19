@@ -92,7 +92,8 @@ namespace Emulator_War_Thunder_Server_Forms
                                 CurrentGearText,
                                 BroadcastMessage,
                                 packageFactory,
-                                MainGunShotAction));
+                                MainGunShotAction,
+                                checkBoxUseReloadGun));
                             jsonDebugText.ForeColor = defJsonDebugTextForeColor;
                             jsonDebugText.Text = message;
                         }

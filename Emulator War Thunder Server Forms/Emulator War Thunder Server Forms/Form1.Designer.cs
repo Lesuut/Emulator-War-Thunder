@@ -42,7 +42,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            checkBox1 = new CheckBox();
+            checkBoxUseReloadGun = new CheckBox();
             ResetReloadingButton = new Button();
             label7 = new Label();
             label8 = new Label();
@@ -189,17 +189,17 @@
             label5.TabIndex = 15;
             label5.Text = "Ammunition 1 Count";
             // 
-            // checkBox1
+            // checkBoxUseReloadGun
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Checked = true;
-            checkBox1.CheckState = CheckState.Checked;
-            checkBox1.Location = new Point(4, 151);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(97, 19);
-            checkBox1.TabIndex = 17;
-            checkBox1.Text = "Use Recharge";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBoxUseReloadGun.AutoSize = true;
+            checkBoxUseReloadGun.Checked = true;
+            checkBoxUseReloadGun.CheckState = CheckState.Checked;
+            checkBoxUseReloadGun.Location = new Point(4, 151);
+            checkBoxUseReloadGun.Name = "checkBoxUseReloadGun";
+            checkBoxUseReloadGun.Size = new Size(97, 19);
+            checkBoxUseReloadGun.TabIndex = 17;
+            checkBoxUseReloadGun.Text = "Use Recharge";
+            checkBoxUseReloadGun.UseVisualStyleBackColor = true;
             // 
             // ResetReloadingButton
             // 
@@ -325,7 +325,7 @@
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(ResetReloadingButton);
-            Controls.Add(checkBox1);
+            Controls.Add(checkBoxUseReloadGun);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -363,7 +363,7 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxUseReloadGun;
         private Button ResetReloadingButton;
         private Label label7;
         private Label label8;
