@@ -17,7 +17,7 @@ public class GunController : MonoBehaviour
     private Transform currentPointForLoad;
     private GunAnim currentGunAnim;
 
-    private List<ProjectileItemController> allProjectileItemControllers;
+    private List<GameObject> allSpawnedItems;
     private ProjectileItemController selectProjectileItemController;
 
     private ProjectileInfo[] projectileInfos;
@@ -28,7 +28,7 @@ public class GunController : MonoBehaviour
 
     private void Start()
     {
-        allProjectileItemControllers = new List<ProjectileItemController>();
+        allSpawnedItems = new List<GameObject>();
         projectileInfos = Resources.LoadAll<ProjectileInfo>("Projectiles");
         loadStatus = true;
         SetGun(0);
@@ -73,14 +73,14 @@ public class GunController : MonoBehaviour
         {
             yield break;
         }
-        for (int i = 0; i < allProjectileItemControllers.Count; i++)
+        for (int i = 0; i < allSpawnedItems.Count; i++)
         {
             try
             {
-                var item = allProjectileItemControllers[i];
-                if (item != null && item.gameObject != null)
+                var item = allSpawnedItems[i];
+                if (item != null && item != null)
                 {
-                    Destroy(item.gameObject);
+                    Destroy(item);
                 }
             }
             catch (System.Exception ex)
@@ -97,8 +97,8 @@ public class GunController : MonoBehaviour
         GameObject obj = Instantiate(projectileInfo.bodyPrefab, spawnPerent);
         obj.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, obj.transform.position.z);
         ProjectileItemController newProjectileItemController = obj.AddComponent<ProjectileItemController>();
-        newProjectileItemController.Init(loaderSystem, this, projectileInfo.projectileType, 1 / reloadTime);
-        allProjectileItemControllers.Add(newProjectileItemController);
+        newProjectileItemController.Init(projectileInfo, loaderSystem, this, projectileInfo.projectileType, 1 / reloadTime);
+        allSpawnedItems.Add(obj);
     }
     public void SelectProjectileItemController(ProjectileItemController projectileItemController)
     {
@@ -121,6 +121,11 @@ public class GunController : MonoBehaviour
         {
             Vibration.Vibrate(250);
             needVibrateMainShotGun = false;
+            if (selectProjectileItemController != null)
+            {
+                currentGunAnim.SetSleeve(selectProjectileItemController.projectileInfo.sleevePrefab);
+            }
+            currentGunAnim.Shoot();
         }
         if (selectProjectileItemController != null)
         {
@@ -138,15 +143,6 @@ public class GunController : MonoBehaviour
     }
     public void MainGunShotVibrate()
     {
-        try
-        {
-            currentGunAnim.Shoot();
-        }
-        catch (System.Exception e)
-        {
-            MyConsole.Instance.DebugLog(e);
-            throw;
-        }
         needVibrateMainShotGun = true;
     }
 }

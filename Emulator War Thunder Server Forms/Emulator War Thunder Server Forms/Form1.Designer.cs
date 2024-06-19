@@ -53,6 +53,7 @@
             GunCaliber = new TrackBar();
             label9 = new Label();
             SetProjectileButton = new Button();
+            resetGearButton = new Button();
             ((System.ComponentModel.ISupportInitialize)GunCaliber).BeginInit();
             SuspendLayout();
             // 
@@ -296,12 +297,24 @@
             SetProjectileButton.UseVisualStyleBackColor = true;
             SetProjectileButton.Click += SetProjectileButton_Click;
             // 
+            // resetGearButton
+            // 
+            resetGearButton.AllowDrop = true;
+            resetGearButton.Location = new Point(4, 118);
+            resetGearButton.Name = "resetGearButton";
+            resetGearButton.Size = new Size(77, 23);
+            resetGearButton.TabIndex = 28;
+            resetGearButton.Text = "Reser Gear";
+            resetGearButton.UseVisualStyleBackColor = true;
+            resetGearButton.Click += resetGearButton_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(802, 536);
+            Controls.Add(resetGearButton);
             Controls.Add(SetProjectileButton);
             Controls.Add(label9);
             Controls.Add(GunCaliber);
@@ -361,5 +374,6 @@
         private TrackBar GunCaliber;
         private Label label9;
         private Button SetProjectileButton;
+        private Button resetGearButton;
     }
 }

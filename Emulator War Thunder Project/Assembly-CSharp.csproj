@@ -72,6 +72,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Skripts\CrewSystem\DriverSystem.cs" />
     <Compile Include="Assets\Skripts\CrewSystem\CommanderSystem.cs" />
+    <Compile Include="Assets\Skripts\Elements\LoaderElement\SleeveItemController.cs" />
     <Compile Include="Assets\Skripts\Elements\GunnerElement\SteeringWheel.cs" />
     <Compile Include="Assets\Skripts\DataMessage\PackageValueFloat.cs" />
     <Compile Include="Assets\Skripts\Core\MyConsole.cs" />

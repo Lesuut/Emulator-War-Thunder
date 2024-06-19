@@ -12,24 +12,33 @@ public class GunAnim : MonoBehaviour
     [SerializeField] private ParticleSystem internalSmokeParticleSystem;
     [Space]
     [SerializeField] private Transform pointForRelaod;
+    [Space]
+    [SerializeField] private Transform perentForSpawnSleeve;
 
-    private bool isRecoiling = false;
-
+    private GameObject currentSleevePrefab;
+    public void SetSleeve(GameObject sleevePrefab)
+    {
+        currentSleevePrefab = sleevePrefab;
+    }
     public void Shoot()
     {
-        if (!isRecoiling)
-        {
-            StartCoroutine(RecoilCoroutine());
-        }
+        StartCoroutine(RecoilCoroutine());    
     }
     public Transform GetPointForReload()
     {
         return pointForRelaod;
     }
+    private bool curRecoilCoroutineActive = false;
     private IEnumerator RecoilCoroutine()
     {
-        isRecoiling = true; 
-
+        if (!curRecoilCoroutineActive)
+        {
+            curRecoilCoroutineActive = true;
+        }
+        else
+        {
+            yield break;
+        }
         OnRecoilStart();
 
         Vector3 originalPosition = gunTrans.localPosition;
@@ -75,7 +84,7 @@ public class GunAnim : MonoBehaviour
 
         OnRecoilEnd();
 
-        isRecoiling = false;
+        curRecoilCoroutineActive = false;
     }
 
     private void OnRecoilStart()
@@ -93,6 +102,11 @@ public class GunAnim : MonoBehaviour
         {
             MyConsole.Instance.DebugLog(e);
             throw;
+        }
+        if (currentSleevePrefab != null)
+        {
+            GameObject obj = Instantiate(currentSleevePrefab, perentForSpawnSleeve);
+            obj.transform.position = perentForSpawnSleeve.transform.position;
         }
     }
 

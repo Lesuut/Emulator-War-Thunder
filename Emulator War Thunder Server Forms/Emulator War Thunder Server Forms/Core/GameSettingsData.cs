@@ -1,6 +1,12 @@
 ﻿public class GameSettingsData
 {
-    public GameSettingsData(TextBox textBoxMaxGear, TextBox textBoxMinGear, Label lableCurrentGear, Action<Package> broadcastMessage, PackageFactory packageFactory, Action mainGunShot)
+    public GameSettingsData(
+        TextBox textBoxMaxGear, 
+        TextBox textBoxMinGear, 
+        Label lableCurrentGear, 
+        Action<Package> broadcastMessage, 
+        PackageFactory packageFactory, 
+        Action mainGunShot)
     {
         if (textBoxMaxGear != null && int.TryParse(textBoxMaxGear.Text, out int maxGearValue))
         {

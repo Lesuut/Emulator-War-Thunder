@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f1ed26791c9fecc4ebe9649a82d8a6e4, type: 3}
+  m_Sprite: {fileID: 23471376, guid: f1ed26791c9fecc4ebe9649a82d8a6e4, type: 3}
   m_Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b3a7cf836bef448bd3f52648371233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
 --- !u!60 &7878074381949253638
 PolygonCollider2D:
   m_ObjectHideFlags: 0

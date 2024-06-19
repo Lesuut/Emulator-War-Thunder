@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: 1
   bodyPrefab: {fileID: 3920605449753315242, guid: 5985ba2cc2a2eb34e971931cee8b2d83, type: 3}
-  casePrefab: {fileID: 0}
+  sleevePrefab: {fileID: 3920605449753315242, guid: f692f23bbefa0b547bb520d6370c3266, type: 3}

@@ -5,7 +5,7 @@ public class ProjectileInfo : ScriptableObject
 {
     public ProjectileType projectileType = ProjectileType.Absent;
     public GameObject bodyPrefab;
-    public GameObject casePrefab;
+    public GameObject sleevePrefab;
 }
 public enum ProjectileType
 {

@@ -211,8 +211,8 @@ public class CustomeVirtualInput
         if (loadGun)
         {
             console($"{currentLablePackage} Shot Active");
-            loadGun = false;
             gameSettingsData.mainGunShot.Invoke();
+            loadGun = false;
             VirtualJeyBoard.HoldKey(KEYCODE.VK_NUMPAD7);
             await Task.Delay(25);
             VirtualJeyBoard.UpKey(KEYCODE.VK_NUMPAD7);
@@ -333,6 +333,11 @@ public class CustomeVirtualInput
         gameSettingsData.lableCurrentGear.Text = $"Current Gear: {currentGear}";
 
         nowGearWork = false;
+    }
+    public void ResetGear()
+    {
+        currentGear = 0;
+        gameSettingsData.lableCurrentGear.Text = $"Current Gear: {currentGear}";
     }
     private void Turn(int value)
     {
