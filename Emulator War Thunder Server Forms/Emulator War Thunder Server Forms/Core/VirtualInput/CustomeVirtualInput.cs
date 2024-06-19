@@ -451,7 +451,7 @@ public class CustomeVirtualInput
         console($"{currentLablePackage} Move Gun Active Gunner: {value}");
         if (value)
         {
-            if (!isMouseMovingGunner)
+            if (!isMouseMovingGunner && !isMouseMovingCommander)
             {
                 startMousePosGunner = VirtualMouseMove.GetLocalCursorPosition();
                 Task.Run(() => MouseMoveGunner());
@@ -475,7 +475,7 @@ public class CustomeVirtualInput
 
         while (isMouseMovingGunner && MainForm.inputAccept)
         {
-            if (!binocularsActive && !isMouseMovingCommander)
+            if (!binocularsActive)
             {
                 // Calculate the new mouse position relative to the start position and joystick input
                 int TargetX = (int)(startMousePosGunner.X - mouseMovePosGunner.X);
