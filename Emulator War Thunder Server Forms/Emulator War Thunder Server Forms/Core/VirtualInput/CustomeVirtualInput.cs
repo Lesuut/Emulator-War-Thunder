@@ -38,8 +38,6 @@ public class CustomeVirtualInput
 
     private bool loadGun = true;
 
-    private bool binocularsActive = false;
-
     public async Task<bool> TryAction(Package package, GameSettingsData gameSettingsData)
     {
         this.gameSettingsData = gameSettingsData;
@@ -197,7 +195,6 @@ public class CustomeVirtualInput
     private async Task BinocularsActive()
     {
         console($"{currentLablePackage} Binoculars Active");
-        binocularsActive = !binocularsActive;
         VirtualJeyBoard.HoldKey(KEYCODE.VK_E);
         await Task.Delay(25);
         VirtualJeyBoard.UpKey(KEYCODE.VK_E);
@@ -410,7 +407,6 @@ public class CustomeVirtualInput
             VirtualJeyBoard.UpKey(KEYCODE.VK_C);
             isMouseMovingCommander = false;
             mouseMoveDirectionCommander = Vector2.Zero;
-            binocularsActive = false;
         }
     }
 
@@ -451,7 +447,7 @@ public class CustomeVirtualInput
         console($"{currentLablePackage} Move Gun Active Gunner: {value}");
         if (value)
         {
-            if (!isMouseMovingGunner && !isMouseMovingCommander)
+            if (!isMouseMovingGunner)
             {
                 startMousePosGunner = VirtualMouseMove.GetLocalCursorPosition();
                 Task.Run(() => MouseMoveGunner());
@@ -475,7 +471,7 @@ public class CustomeVirtualInput
 
         while (isMouseMovingGunner && MainForm.inputAccept)
         {
-            if (!binocularsActive)
+            if (!isMouseMovingCommander)
             {
                 // Calculate the new mouse position relative to the start position and joystick input
                 int TargetX = (int)(startMousePosGunner.X - mouseMovePosGunner.X);
