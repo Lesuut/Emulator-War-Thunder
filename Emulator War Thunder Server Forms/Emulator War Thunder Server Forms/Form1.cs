@@ -382,15 +382,5 @@ namespace Emulator_War_Thunder_Server_Forms
                     break;
             }
         }
-
-        private void GunCaliber_Scroll(object sender, EventArgs e)
-        {
-            SetGunCaliber();
-        }
-
-        private void resetGearButton_Click(object sender, EventArgs e)
-        {
-            virtualImput.ResetGear();
-        }
     }
 }

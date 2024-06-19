@@ -15,3 +15,4 @@ Smoke - G
 Firefighting - 6
 Select projectile 1 - 1
 Select projectile 2 - 2
+Machine Gun - Num2

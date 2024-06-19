@@ -275,7 +275,6 @@
             GunCaliber.Name = "GunCaliber";
             GunCaliber.Size = new Size(155, 45);
             GunCaliber.TabIndex = 25;
-            GunCaliber.Scroll += GunCaliber_Scroll;
             // 
             // label9
             // 
@@ -306,7 +305,6 @@
             resetGearButton.TabIndex = 28;
             resetGearButton.Text = "Reser Gear";
             resetGearButton.UseVisualStyleBackColor = true;
-            resetGearButton.Click += resetGearButton_Click;
             // 
             // MainForm
             // 

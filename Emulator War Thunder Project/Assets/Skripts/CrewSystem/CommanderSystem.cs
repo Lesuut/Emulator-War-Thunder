@@ -59,4 +59,10 @@ public class CommanderSystem : MonoBehaviour
             client.PostData(package);
         }
     }
+    public void MachineGunActive(bool value)
+    {
+        PackageValueBool package = pachageFactory.GetPackageValueBool("Machine Gun Active");
+        package.Value = value;
+        client.PostData(package);
+    }
 }

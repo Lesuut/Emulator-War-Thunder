@@ -81,6 +81,9 @@ public class CustomeVirtualInput
                 case "Gunner Move Gun Active":
                     MoveGunActiveGunner(packageValueBool.Value);
                     break;
+                case "Machine Gun Active":
+                    MachineGun(packageValueBool.Value);
+                    break;
                 default:
                     break;
             }
@@ -184,6 +187,18 @@ public class CustomeVirtualInput
             VirtualJeyBoard.UpKey(KEYCODE.VK_S);
         }
         console($"{currentLablePackage} Brake: {value}");
+    }
+    private void MachineGun(bool value)
+    {
+        if (value)
+        {
+            VirtualJeyBoard.HoldKey(KEYCODE.VK_NUMPAD2);
+        }
+        else
+        {
+            VirtualJeyBoard.UpKey(KEYCODE.VK_NUMPAD2);
+        }
+        console($"{currentLablePackage} Machine Gun: {value}");
     }
     private async Task EngineActive()
     {

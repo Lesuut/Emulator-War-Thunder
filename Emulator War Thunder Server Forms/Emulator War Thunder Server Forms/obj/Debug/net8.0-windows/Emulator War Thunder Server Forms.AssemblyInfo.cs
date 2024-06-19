@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Emulator War Thunder Server Forms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+235d696180aab93e3b1feb4096ae4e073a6a62ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4aec83f3d09996814e3fd9fb1873e649dbc9cfb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Emulator War Thunder Server Forms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Emulator War Thunder Server Forms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
