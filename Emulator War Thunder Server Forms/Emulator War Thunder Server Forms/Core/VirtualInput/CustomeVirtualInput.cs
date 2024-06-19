@@ -38,6 +38,8 @@ public class CustomeVirtualInput
 
     private bool loadGun = true;
 
+    private bool binocularsActive = false;
+
     public async Task<bool> TryAction(Package package, GameSettingsData gameSettingsData)
     {
         this.gameSettingsData = gameSettingsData;
@@ -195,6 +197,7 @@ public class CustomeVirtualInput
     private async Task BinocularsActive()
     {
         console($"{currentLablePackage} Binoculars Active");
+        binocularsActive = !binocularsActive;
         VirtualJeyBoard.HoldKey(KEYCODE.VK_E);
         await Task.Delay(25);
         VirtualJeyBoard.UpKey(KEYCODE.VK_E);
@@ -395,7 +398,6 @@ public class CustomeVirtualInput
             Task.Run(() => MouseMoveCommander());
         }
     }
-
     private void MoveJoyActiveCommander(bool value)
     {
         console($"{currentLablePackage} Move Joy Active Commander: {value}");
@@ -408,24 +410,28 @@ public class CustomeVirtualInput
             VirtualJeyBoard.UpKey(KEYCODE.VK_C);
             isMouseMovingCommander = false;
             mouseMoveDirectionCommander = Vector2.Zero;
+            binocularsActive = false;
         }
     }
 
     private async Task MouseMoveCommander()
     {
-        while (!isMouseMovingGunner && isMouseMovingCommander && !isOpticActive && MainForm.inputAccept && !isMouseMovingGunner)
+        while (isMouseMovingCommander && !isOpticActive && MainForm.inputAccept)
         {
-            // Получаем текущее положение мыши
-            Vector2 currentPos = VirtualMouseMove.GetCursorPosition();
+            if (!isMouseMovingGunner)
+            {
+                // Получаем текущее положение мыши
+                Vector2 currentPos = VirtualMouseMove.GetCursorPosition();
 
-            // Вычисляем новые координаты мыши
-            int newX = (int)(currentPos.X + mouseMoveDirectionCommander.X * moveStepCommander);
-            int newY = (int)(currentPos.Y - mouseMoveDirectionCommander.Y * moveStepCommander);
+                // Вычисляем новые координаты мыши
+                int newX = (int)(currentPos.X + mouseMoveDirectionCommander.X * moveStepCommander);
+                int newY = (int)(currentPos.Y - mouseMoveDirectionCommander.Y * moveStepCommander);
 
-            VirtualMouseMove.MoveMouseRelativeLocal(newX - (int)currentPos.X, newY - (int)currentPos.Y);
+                VirtualMouseMove.MoveMouseRelativeLocal(newX - (int)currentPos.X, newY - (int)currentPos.Y);
 
-            // Ожидаем интервал перед следующим обновлением позиции мыши
-            await Task.Delay(moveMouseInterval);
+                // Ожидаем интервал перед следующим обновлением позиции мыши
+                await Task.Delay(moveMouseInterval);
+            }
         }
 
         isMouseMovingCommander = false;
@@ -465,11 +471,11 @@ public class CustomeVirtualInput
     }
     private async Task MouseMoveGunner()
     {
-        Console.WriteLine("Start async Task MouseMoveGunner");
+        console("Start async Task MouseMoveGunner");
 
         while (isMouseMovingGunner && MainForm.inputAccept)
         {
-            if (!isMouseMovingCommander)
+            if (!binocularsActive && !isMouseMovingCommander)
             {
                 // Calculate the new mouse position relative to the start position and joystick input
                 int TargetX = (int)(startMousePosGunner.X - mouseMovePosGunner.X);
@@ -513,6 +519,6 @@ public class CustomeVirtualInput
             await Task.Delay(moveMouseInterval);
         }
 
-        Console.WriteLine("Stop async Task MouseMoveGunner");
+        console("Stop async Task MouseMoveGunner");
     }
 }
