@@ -486,9 +486,6 @@ public class CustomeVirtualInput
                 float smoothingFactor = 0.1f; // Adjust the smoothing factor as needed
                 float speed = Math.Min(maxSpeed, distance * smoothingFactor);
 
-                /* float speed = (Math.Abs(TargetX - localMousePos.X) + Math.Abs(TargetY - localMousePos.Y)) / 2;
-                 //float speed = 2;*/
-
                 float deadZone = speed + 0.1f;
 
                 if (localMousePos.X - deadZone > TargetX)
