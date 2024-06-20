@@ -49,7 +49,7 @@ namespace Emulator_War_Thunder_Server_Forms
                 StartKeyListenerAsync();
             }
             // Prem
-            /*labelRemainingTime.Text = "       ";
+            /*labelRemainingTime.Text = "∞";
             StartServerAsync();
             StartKeyListenerAsync();*/
         }

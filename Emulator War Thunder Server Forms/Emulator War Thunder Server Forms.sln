@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emulator War Thunder Server Forms", "Emulator War Thunder Server Forms\Emulator War Thunder Server Forms.csproj", "{27796016-141D-40DD-903B-B47707000D52}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{E7EB19C6-755D-4CFF-9DBA-6C4BDADD8341}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{B6C684B1-2929-4CDF-B681-DE4378E8BE60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{27796016-141D-40DD-903B-B47707000D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27796016-141D-40DD-903B-B47707000D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27796016-141D-40DD-903B-B47707000D52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E7EB19C6-755D-4CFF-9DBA-6C4BDADD8341}.Debug|Any CPU.ActiveCfg = Debug
-		{E7EB19C6-755D-4CFF-9DBA-6C4BDADD8341}.Release|Any CPU.ActiveCfg = Release
+		{B6C684B1-2929-4CDF-B681-DE4378E8BE60}.Debug|Any CPU.ActiveCfg = Debug
+		{B6C684B1-2929-4CDF-B681-DE4378E8BE60}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
