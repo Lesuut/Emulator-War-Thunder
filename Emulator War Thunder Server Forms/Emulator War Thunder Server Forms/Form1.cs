@@ -41,17 +41,17 @@ namespace Emulator_War_Thunder_Server_Forms
             defJsonDebugTextForeColor = jsonDebugText.ForeColor;
 
             // Free
-            /*_ = TimerFreeVersionAsync();
+            _ = TimerFreeVersionAsync();
 
             if (trialManager.LoadData() > 0 || trialManager == null)
             {
                 StartServerAsync();
                 StartKeyListenerAsync();
-            }*/
+            }
             // Prem
-            labelRemainingTime.Text = "       ";
+            /*labelRemainingTime.Text = "       ";
             StartServerAsync();
-            StartKeyListenerAsync();
+            StartKeyListenerAsync();*/
         }
         private async Task TimerFreeVersionAsync()
         {

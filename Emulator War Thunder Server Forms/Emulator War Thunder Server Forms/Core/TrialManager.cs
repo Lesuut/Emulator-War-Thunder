@@ -1,13 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Win32;
 
 public class TrialManager
 {
     private const string RegistryPath = @"Software\GullSoft\WarThunderEmulatorServer";
-    private const string RegistryKey = "RemainingTime3264";
+    private const string RegistryKey = "RemainingTime5455674";
     private static readonly string EncryptionKey = "zdFroV3zyNTEBQLXYA4Pr/R6ef7CHBvijhzt2PQV5Hc=";
 
     private readonly int defaultValueInSeconds;
@@ -19,8 +17,7 @@ public class TrialManager
 
     public void SaveData(int seconds)
     {
-        DateTime expiryDate = DateTime.Now.AddSeconds(seconds);
-        SaveExpiryDate(expiryDate);
+        SaveRemainingTime(seconds);
     }
 
     public int LoadData()
@@ -28,32 +25,33 @@ public class TrialManager
         string encryptedValue = ReadDataFromRegistry(RegistryKey);
         if (string.IsNullOrEmpty(encryptedValue))
         {
-            SaveDefaultExpiryTime();
+            SaveDefaultRemainingTime();
             return defaultValueInSeconds;
         }
 
-        string expiryDateString = Decrypt(encryptedValue);
-        DateTime expiryDate;
-        if (!DateTime.TryParse(expiryDateString, out expiryDate))
+        int remainingTime;
+        string remainingTimeString = Decrypt(encryptedValue);
+        if (!int.TryParse(remainingTimeString, out remainingTime) || remainingTime <= 0)
         {
-            SaveDefaultExpiryTime();
+            SaveDefaultRemainingTime();
             return defaultValueInSeconds;
         }
 
-        TimeSpan remainingTime = expiryDate - DateTime.Now;
-        return (int)Math.Max(0, remainingTime.TotalSeconds);
+        remainingTime = Math.Max(0, remainingTime - 1);
+        SaveRemainingTime(remainingTime);
+
+        return remainingTime;
     }
 
-    private void SaveDefaultExpiryTime()
+    private void SaveDefaultRemainingTime()
     {
-        DateTime expiryDate = DateTime.Now.AddSeconds(defaultValueInSeconds);
-        SaveExpiryDate(expiryDate);
+        SaveRemainingTime(defaultValueInSeconds);
     }
 
-    private void SaveExpiryDate(DateTime expiryDate)
+    private void SaveRemainingTime(int remainingTime)
     {
-        string expiryDateString = expiryDate.ToString();
-        string encryptedValue = Encrypt(expiryDateString);
+        string remainingTimeString = remainingTime.ToString();
+        string encryptedValue = Encrypt(remainingTimeString);
         SaveDataToRegistry(RegistryKey, encryptedValue);
     }
 
@@ -67,7 +65,7 @@ public class TrialManager
             }
         }
         catch (UnauthorizedAccessException ex)
-        {        
+        {
             Console.WriteLine("Failed to access Registry: " + ex.Message);
         }
     }
