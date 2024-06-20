@@ -19364,6 +19364,7 @@ MonoBehaviour:
   internalSmokeParticleSystem: {fileID: 1108286170}
   pointForRelaod: {fileID: 1150146922}
   perentForSpawnSleeve: {fileID: 1348871427}
+  currentSleevePrefab: {fileID: 3920605449753315242, guid: f692f23bbefa0b547bb520d6370c3266, type: 3}
 --- !u!1 &1454346730
 GameObject:
   m_ObjectHideFlags: 0
@@ -27210,6 +27211,7 @@ MonoBehaviour:
   internalSmokeParticleSystem: {fileID: 270117542}
   pointForRelaod: {fileID: 1338969868}
   perentForSpawnSleeve: {fileID: 1348871427}
+  currentSleevePrefab: {fileID: 3920605449753315242, guid: f692f23bbefa0b547bb520d6370c3266, type: 3}
 --- !u!1 &1861931995
 GameObject:
   m_ObjectHideFlags: 0
@@ -28348,6 +28350,7 @@ MonoBehaviour:
   internalSmokeParticleSystem: {fileID: 1719573764}
   pointForRelaod: {fileID: 784288322}
   perentForSpawnSleeve: {fileID: 1348871427}
+  currentSleevePrefab: {fileID: 3920605449753315242, guid: f692f23bbefa0b547bb520d6370c3266, type: 3}
 --- !u!1 &2119905396
 GameObject:
   m_ObjectHideFlags: 0

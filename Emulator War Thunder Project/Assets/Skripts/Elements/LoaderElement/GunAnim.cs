@@ -14,8 +14,8 @@ public class GunAnim : MonoBehaviour
     [SerializeField] private Transform pointForRelaod;
     [Space]
     [SerializeField] private Transform perentForSpawnSleeve;
+    [SerializeField] private GameObject currentSleevePrefab;
 
-    private GameObject currentSleevePrefab;
     public void SetSleeve(GameObject sleevePrefab)
     {
         currentSleevePrefab = sleevePrefab;
