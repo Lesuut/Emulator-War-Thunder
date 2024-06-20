@@ -34,8 +34,6 @@ public class CustomeVirtualInput
     private Vector2 mouseMovePosGunner = new Vector2(0, 0);
     private Vector2 startMousePosGunner = new Vector2(0, 0);
 
-    private bool isOpticActive = false;
-
     private bool loadGun = true;
 
     public async Task<bool> TryAction(Package package, GameSettingsData gameSettingsData)
@@ -427,7 +425,7 @@ public class CustomeVirtualInput
 
     private async Task MouseMoveCommander()
     {
-        while (isMouseMovingCommander && !isOpticActive && MainForm.inputAccept)
+        while (isMouseMovingCommander && !gameSettingsData.sightingReticleActiveCheckBox.Checked && MainForm.inputAccept)
         {
             if (!isMouseMovingGunner)
             {
@@ -451,7 +449,7 @@ public class CustomeVirtualInput
     {
         console($"{currentLablePackage} Optics Active");
 
-        isOpticActive = !isOpticActive;
+        gameSettingsData.sightingReticleActiveCheckBox.Checked = !gameSettingsData.sightingReticleActiveCheckBox.Checked;
 
         VirtualJeyBoard.HoldKey(KEYCODE.VK_LSHIFT);
         await Task.Delay(25);

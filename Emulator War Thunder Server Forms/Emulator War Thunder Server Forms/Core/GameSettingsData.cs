@@ -7,7 +7,8 @@
         Action<Package> broadcastMessage, 
         PackageFactory packageFactory, 
         Action mainGunShot,
-        CheckBox checkBoxReloadGun)
+        CheckBox checkBoxReloadGun,
+        CheckBox sightingReticleActiveCheckBox)
     {
         if (textBoxMaxGear != null && int.TryParse(textBoxMaxGear.Text, out int maxGearValue))
         {
@@ -32,6 +33,7 @@
         this.packageFactory = packageFactory;
         this.mainGunShot = mainGunShot;
         this.checkBoxReloadGun = checkBoxReloadGun;
+        this.sightingReticleActiveCheckBox = sightingReticleActiveCheckBox;
     }
 
     public int maxGear { get; set; }
@@ -42,4 +44,5 @@
     public PackageFactory packageFactory { get; set; }
     public Action mainGunShot { get; set; }
     public CheckBox checkBoxReloadGun { get; set; }
+    public CheckBox sightingReticleActiveCheckBox { get; set; }
 }

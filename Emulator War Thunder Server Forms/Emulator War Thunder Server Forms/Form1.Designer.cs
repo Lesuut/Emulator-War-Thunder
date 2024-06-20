@@ -54,6 +54,10 @@
             label9 = new Label();
             SetProjectileButton = new Button();
             resetGearButton = new Button();
+            label10 = new Label();
+            SightingReticleActiveCheckBox = new CheckBox();
+            labelRemainingTime = new Label();
+            label11 = new Label();
             ((System.ComponentModel.ISupportInitialize)GunCaliber).BeginInit();
             SuspendLayout();
             // 
@@ -118,16 +122,16 @@
             // 
             jsonDebugText.BackColor = Color.FromArgb(0, 64, 0);
             jsonDebugText.ForeColor = Color.Yellow;
-            jsonDebugText.Location = new Point(175, 430);
+            jsonDebugText.Location = new Point(333, 430);
             jsonDebugText.Multiline = true;
             jsonDebugText.Name = "jsonDebugText";
-            jsonDebugText.Size = new Size(613, 99);
+            jsonDebugText.Size = new Size(455, 99);
             jsonDebugText.TabIndex = 6;
             jsonDebugText.Text = "JSON";
             // 
             // sayHiButton
             // 
-            sayHiButton.Location = new Point(12, 506);
+            sayHiButton.Location = new Point(6, 506);
             sayHiButton.Name = "sayHiButton";
             sayHiButton.Size = new Size(75, 23);
             sayHiButton.TabIndex = 7;
@@ -192,8 +196,6 @@
             // checkBoxUseReloadGun
             // 
             checkBoxUseReloadGun.AutoSize = true;
-            checkBoxUseReloadGun.Checked = true;
-            checkBoxUseReloadGun.CheckState = CheckState.Checked;
             checkBoxUseReloadGun.Location = new Point(4, 151);
             checkBoxUseReloadGun.Name = "checkBoxUseReloadGun";
             checkBoxUseReloadGun.Size = new Size(97, 19);
@@ -306,12 +308,58 @@
             resetGearButton.Text = "Reser Gear";
             resetGearButton.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(175, 424);
+            label10.Name = "label10";
+            label10.Size = new Size(10, 120);
+            label10.TabIndex = 29;
+            label10.Text = "|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n|\r\n\r\n";
+            // 
+            // SightingReticleActiveCheckBox
+            // 
+            SightingReticleActiveCheckBox.AutoSize = true;
+            SightingReticleActiveCheckBox.Location = new Point(191, 432);
+            SightingReticleActiveCheckBox.Name = "SightingReticleActiveCheckBox";
+            SightingReticleActiveCheckBox.Size = new Size(108, 34);
+            SightingReticleActiveCheckBox.TabIndex = 30;
+            SightingReticleActiveCheckBox.Text = "Sighting Reticle\r\nCurrent Active\r\n";
+            SightingReticleActiveCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // labelRemainingTime
+            // 
+            labelRemainingTime.AutoSize = true;
+            labelRemainingTime.BackColor = Color.Black;
+            labelRemainingTime.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelRemainingTime.ForeColor = Color.DarkTurquoise;
+            labelRemainingTime.ImageAlign = ContentAlignment.BottomRight;
+            labelRemainingTime.Location = new Point(265, 497);
+            labelRemainingTime.Name = "labelRemainingTime";
+            labelRemainingTime.Size = new Size(62, 30);
+            labelRemainingTime.TabIndex = 32;
+            labelRemainingTime.Text = "00:00";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(191, 497);
+            label11.Name = "label11";
+            label11.Size = new Size(64, 30);
+            label11.TabIndex = 33;
+            label11.Text = "Remaining\r\nTime";
+            label11.Click += label11_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(802, 536);
+            Controls.Add(label11);
+            Controls.Add(labelRemainingTime);
+            Controls.Add(SightingReticleActiveCheckBox);
+            Controls.Add(label10);
             Controls.Add(resetGearButton);
             Controls.Add(SetProjectileButton);
             Controls.Add(label9);
@@ -373,5 +421,9 @@
         private Label label9;
         private Button SetProjectileButton;
         private Button resetGearButton;
+        private Label label10;
+        private CheckBox SightingReticleActiveCheckBox;
+        private Label labelRemainingTime;
+        private Label label11;
     }
 }

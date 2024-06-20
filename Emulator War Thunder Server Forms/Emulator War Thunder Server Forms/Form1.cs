@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Media;
 
 namespace Emulator_War_Thunder_Server_Forms
 {
@@ -23,6 +24,8 @@ namespace Emulator_War_Thunder_Server_Forms
 
         private Color defJsonDebugTextForeColor;
 
+        private TrialManager trialManager;
+
         private PackageFactory packageFactory = new PackageFactory("Emulator", TypeCrew.Server);
 
         [DllImport("user32.dll")]
@@ -34,11 +37,52 @@ namespace Emulator_War_Thunder_Server_Forms
             isServerRunning = false;
             connectedClients = new List<TcpClient>(); // Initialize the list of connected clients
             virtualImput = new CustomeVirtualInput(ConsoleLog);
+            trialManager = new TrialManager(2400);
             defJsonDebugTextForeColor = jsonDebugText.ForeColor;
+
+            // Free
+            /*_ = TimerFreeVersionAsync();
+
+            if (trialManager.LoadData() > 0 || trialManager == null)
+            {
+                StartServerAsync();
+                StartKeyListenerAsync();
+            }*/
+            // Prem
+            labelRemainingTime.Text = "       ";
             StartServerAsync();
             StartKeyListenerAsync();
         }
+        private async Task TimerFreeVersionAsync()
+        {
+            while (true)
+            {
+                await Task.Delay(1000);
 
+                int currentSecond = trialManager.LoadData();
+
+                if (currentSecond > 0)
+                {
+                    int minutes = currentSecond / 60;
+                    int seconds = currentSecond % 60;
+
+                    string formattedTime = $"{minutes:D2}:{seconds:D2}";
+
+                    labelRemainingTime.Text = formattedTime;
+                }
+                else
+                {
+                    ConsoleLog("The free period is over. Get the full version on Patrion");
+                    labelRemainingTime.ForeColor = Color.Red;
+                    labelRemainingTime.Text = "00:00";
+                    await Task.Delay(1000);
+                    labelRemainingTime.Text = "Bye :)";
+                    await Task.Delay(5000);
+                    this.Close();
+                    break;
+                }
+            }
+        }
         private async void StartServerAsync()
         {
             try
@@ -93,7 +137,8 @@ namespace Emulator_War_Thunder_Server_Forms
                                 BroadcastMessage,
                                 packageFactory,
                                 MainGunShotAction,
-                                checkBoxUseReloadGun));
+                                checkBoxUseReloadGun,
+                                SightingReticleActiveCheckBox));
                             jsonDebugText.ForeColor = defJsonDebugTextForeColor;
                             jsonDebugText.Text = message;
                         }
@@ -187,6 +232,7 @@ namespace Emulator_War_Thunder_Server_Forms
                     inputAccept = !inputAccept;
                     ConsoleLog($"Keyboard control: {inputAccept}");
                     DisableInputSimulationLable.Text = $"Active: {inputAccept}";
+                    SystemSounds.Beep.Play();
                 }
                 Task.Delay(100).Wait(); // небольшая задержка для снижения нагрузки на процессор
             }
@@ -381,6 +427,11 @@ namespace Emulator_War_Thunder_Server_Forms
                 default:
                     break;
             }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

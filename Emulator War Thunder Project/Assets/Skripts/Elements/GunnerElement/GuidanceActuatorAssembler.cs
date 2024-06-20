@@ -26,7 +26,7 @@ public class GuidanceActuatorAssembler : MonoBehaviour
 
                 gunnerSystem.MoveJoy(new Vector2 (currentX, currentY));
             }
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
