@@ -1,5 +1,7 @@
 Gas - W
 Stop - S
+Turn Left = A
+Turn Right = D
 GearUp - Num9
 GearDown - Num6
 GearN - Num3
